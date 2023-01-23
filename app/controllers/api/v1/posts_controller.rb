@@ -20,7 +20,7 @@ class Api::V1::PostsController < ApplicationController
 
   def update
     post = Post.find(params[:id])
-    post.update
+    post.update(post_params)
     render json: post, status: :accepted
   end
 
