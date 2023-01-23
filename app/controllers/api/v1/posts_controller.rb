@@ -19,13 +19,13 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def update
-    post.find(params[:id])
+    post = Post.find(params[:id])
     post.update
     render json: post, status: :accepted
   end
 
   def destroy
-    Post.find(params[:id]).destroy!
+    post = Post.find(params[:id]).destroy!
 
     head :no_content
 
